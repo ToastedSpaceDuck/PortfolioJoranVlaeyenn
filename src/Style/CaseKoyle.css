@@ -98,7 +98,6 @@ body {
 /* card-style section with slightly lighter bg */
 .cs-section--card {
   background: #1F2228;
-  border-radius: 16px;
   padding: 48px;
   grid-template-columns: 60px 1fr;
   margin: 0 -48px;
@@ -157,7 +156,6 @@ body {
 .info-card {
   background: #13161E;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -186,7 +184,6 @@ body {
 .insight-card {
   background: #13161E;
   border: 1px solid rgba(55, 94, 204, 0.3);
-  border-radius: 12px;
   padding: 24px;
 }
 
@@ -204,7 +201,6 @@ body {
 .idea-card {
   background: #13161E;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -253,7 +249,6 @@ body {
 .conclusion-note {
   background: #13161E;
   border-left: 3px solid #375ECC;
-  border-radius: 0 8px 8px 0;
   padding: 16px 20px;
   font-size: 14px !important;
   color: #B8B8B8 !important;
@@ -291,7 +286,6 @@ body {
 /* ── TABLE ── */
 .table-wrap {
   overflow-x: auto;
-  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -392,7 +386,6 @@ body {
 
 .timeline__phase {
   padding: 14px 16px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -445,8 +438,6 @@ body {
 }
 
 .mockup-slot {
-  background: #375ECC;
-  border-radius: 16px 16px 0 0;
   overflow: hidden;
   height: 320px;
   display: flex;
@@ -455,7 +446,7 @@ body {
 }
 
 .mockup-slot img {
-  width: 85%;
+  width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: bottom center;
@@ -505,7 +496,6 @@ body {
 .gallery__item {
   position: relative;
   aspect-ratio: 3 / 4;
-  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   background: #1F2228;
@@ -546,7 +536,6 @@ body {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 8px 18px;
-  border-radius: 20px;
 }
 
 /* ── LIGHTBOX ── */
@@ -572,7 +561,6 @@ body {
   max-width: 90vw;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 12px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
   transform: scale(0.95);
   transition: transform 0.3s ease;
@@ -592,7 +580,6 @@ body {
   font-size: 18px;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -711,7 +698,6 @@ body {
 
   .cs-section--card {
     margin: 0;
-    border-radius: 12px;
   }
 
   .timeline__track {

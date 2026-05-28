@@ -15,17 +15,48 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAV (desktop) -->
   <nav class="navbar">
     <div class="nav-bg"></div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About me</a>
-      <a href="https://drive.google.com/file/d/1qMc9I4lUaWcRX63DNwMAfDBnFipP0C3F/view?usp=sharing">Resume</a>      
+      <a href="https://drive.google.com/file/d/1qMc9I4lUaWcRX63DNwMAfDBnFipP0C3F/view?usp=sharing">Resume</a>
       <a href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9">LinkedIn</a>
     </div>
   </nav>
 
+  <!-- HAMBURGER BUTTON (mobile only, shown via CSS) -->
+  <button class="nav-hamburger" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- FULLSCREEN OVERLAY (mobile only) -->
+  <nav class="nav-overlay" id="navOverlay">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <div class="nav-overlay__divider"></div>
+    <a href="about.html" onclick="toggleMenu()">About me</a>
+    <div class="nav-overlay__divider"></div>
+    <a href="https://drive.google.com/file/d/1qMc9I4lUaWcRX63DNwMAfDBnFipP0C3F/view?usp=sharing" onclick="toggleMenu()">Resume</a>
+    <div class="nav-overlay__divider"></div>
+    <a href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9" target="_blank">LinkedIn</a>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menuBtn').classList.toggle('is-open');
+      document.getElementById('navOverlay').classList.toggle('is-open');
+      document.body.style.overflow =
+        document.getElementById('navOverlay').classList.contains('is-open') ? 'hidden' : '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.getElementById('navOverlay').classList.contains('is-open')) {
+        toggleMenu();
+      }
+    });
+  </script>
 
   <!-- HERO -->
   <header class="hero">
@@ -36,8 +67,8 @@
       <div class="hero-inner">
 
         <h1>
-          Design isn’t something you <br>
-          finish quickly it’s <br>
+          Design isn't something you <br>
+          finish quickly it's <br>
           something you get right.
         </h1>
 
@@ -69,37 +100,31 @@
               <img src="./Images/graduats.png" alt="">
             </div>
           </div>
-
-
           <div class="card-bottom">
             <h3 class="card-title">Graduate thesis</h3>
             <p class="card-text">
               An e-commerce template created by a software platform specializing in time management for businesses in
-              the
-              beauty industry, including UX testing based on information about products, navigation and the purchasing
+              the beauty industry, including UX testing based on information about products, navigation and the purchasing
               process
             </p>
           </div>
         </a>
       </div>
 
-      <!-- CARD 2 (WITH DIFFERENT IMAGE BACKGROUND) -->
+      <!-- CARD 2 -->
       <div class="project-card new-card">
-
         <div class="card-top alt-bg">
           <div class="card-image">
             <img src="./Images/empty.png" alt="">
           </div>
         </div>
-
         <div class="card-bottom">
           <h3 class="card-title">Coming soon</h3>
           <p class="card-text">
-            Since I just graduated, I don’t have much experience yet, so I’m currently working on projects. Once they’re
-            finished and fully developed, I’ll post them here
+            Since I just graduated, I don't have much experience yet, so I'm currently working on projects. Once they're
+            finished and fully developed, I'll post them here
           </p>
         </div>
-
       </div>
 
     </div>
@@ -116,7 +141,6 @@
               <img src="./Images/Koyle.png" alt="">
             </div>
           </div>
-
           <div class="card-bottom">
             <h3 class="card-title">Koyle</h3>
             <p class="card-text">
@@ -132,28 +156,25 @@
           <img src="./Images/empty.png" alt="">
         </div>
       </div>
-
       <div class="card-bottom">
         <h3 class="card-title">Coming soon</h3>
         <p class="card-text">
-          Since I just graduated, I don’t have much experience yet, so I’m currently working on small projects. Once
-          they’re finished and fully developed, I’ll post them here
+          Since I just graduated, I don't have much experience yet, so I'm currently working on small projects. Once
+          they're finished and fully developed, I'll post them here
         </p>
       </div>
     </div>
-
     <div class="project-card new-card small">
       <div class="card-top small-bg-3">
         <div class="card-image">
           <img src="./Images/empty.png" alt="">
         </div>
       </div>
-
       <div class="card-bottom">
         <h3 class="card-title">Coming soon</h3>
         <p class="card-text">
-          Since I just graduated, I don’t have much experience yet, so I’m currently working on small projects. Once
-          they’re finished and fully developed, I’ll post them here
+          Since I just graduated, I don't have much experience yet, so I'm currently working on small projects. Once
+          they're finished and fully developed, I'll post them here
         </p>
       </div>
     </div>
@@ -161,29 +182,22 @@
   </section>
 
   <footer class="footer">
-
     <div class="footer-fade"></div>
-
     <div class="footer-inner">
-
       <div class="footer-item">
         <span class="label">Email</span>
         <span class="value">joran.vlaeyen301@gmail.com</span>
       </div>
-
       <div class="footer-item">
         <span class="label">Phone</span>
         <span class="value">+32 471 81 26 07</span>
       </div>
-
       <div class="footer-item">
         <span class="label">LinkedIn</span>
         <a href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9" class="value link">LinkedIn</a>
       </div>
-
     </div>
-
   </footer>
-</body>
 
+</body>
 </html>

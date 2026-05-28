@@ -75,7 +75,7 @@ a {
 
 .hero-inner {
   max-width: 1100px;
-  margin: 120px 120px 64px;
+  margin: 40px 120px 64px;
 }
 
 .hero-inner h1 {
@@ -281,6 +281,103 @@ a {
   transition: 0.3s ease;
 }
 
+
+/* ── HAMBURGER BUTTON (hidden on desktop) ── */
+.nav-hamburger {
+  display: none;
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 300;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.nav-hamburger:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  transform-origin: center;
+}
+
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── FULLSCREEN OVERLAY ── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 7, 13, 0.97);
+  z-index: 250;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.nav-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-overlay a {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(28px, 5vw, 48px);
+  color: white;
+  text-decoration: none;
+  letter-spacing: -1px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s ease;
+}
+
+.nav-overlay.is-open a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-overlay.is-open a:nth-child(1) { transition-delay: 0.05s; }
+.nav-overlay.is-open a:nth-child(2) { transition-delay: 0.10s; }
+.nav-overlay.is-open a:nth-child(3) { transition-delay: 0.15s; }
+.nav-overlay.is-open a:nth-child(4) { transition-delay: 0.20s; }
+
+.nav-overlay a:hover { color: #8A8F98; }
+
+.nav-overlay__divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 4px 0;
+}
+
 /* ════════════════════════════════
    RESPONSIVE — TABLET (≤ 1024px)
    ════════════════════════════════ */
@@ -346,19 +443,18 @@ a {
    ════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* nav: smaller gap, smaller text */
+
+  /* hide desktop nav links on mobile */
   .nav-links {
-    gap: 16px;
-    padding: 20px 16px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 12px;
+  /* ── HAMBURGER BUTTON ── */
+  .nav-hamburger {
+    display: flex;
   }
 
-  /* hero */
+  /* ── HERO GAP FIX ── */
   .hero-inner {
     margin: 0 24px 40px;
   }

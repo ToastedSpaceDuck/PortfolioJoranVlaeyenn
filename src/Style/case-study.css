@@ -411,19 +411,26 @@ body {
 
 .timeline__weeks {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 8px;
 }
 
 /* Each label spans 2 columns to align with the phase blocks above */
 .timeline__weeks span {
-  grid-column: span 2;
   font-family: 'Space Mono', monospace;
   font-size: 11px;
   color: #8A8F98;
   letter-spacing: 0.06em;
   text-align: center;
+}
+
+.timeline__weeks span:first-child {
+  text-align: left;
+}
+
+.timeline__weeks span:last-child {
+  text-align: right;
 }
 
 

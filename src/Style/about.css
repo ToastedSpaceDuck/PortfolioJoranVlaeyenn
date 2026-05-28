@@ -46,15 +46,20 @@ body {
   opacity: 0.6;
 }
 
+.nav-active {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 6px 16px;
+  border-radius: 20px;
+}
 
 /* ── HERO ── */
 .hero {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  padding-top: 140px;
+  align-items: flex-end;
 }
 
 .hero__bg {
@@ -110,13 +115,11 @@ body {
 
 .hero__photo {
   width: 350px;
-  height: 100%;
   flex-shrink: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   align-self: end;
-  margin-bottom: 0;
 }
 
 .hero__photo img {
@@ -149,8 +152,6 @@ body {
   gap: 48px;
 }
 
-/* first item spans full row on its own naturally,
-   but per the design: 2 columns top row, 1 bottom left */
 .expect__grid .expect__item:nth-child(1) { grid-column: 1; }
 .expect__grid .expect__item:nth-child(2) { grid-column: 2; }
 .expect__grid .expect__item:nth-child(3) { grid-column: 1; }
@@ -167,7 +168,7 @@ body {
   font-size: 15px;
   line-height: 1.75;
   color: #EDF4FA;
-  width: 500px;
+  /* no fixed width — let it flow naturally */
 }
 
 /* ── PERSONAL LIFE ── */
@@ -234,6 +235,30 @@ body {
   color: #B8B8B8;
 }
 
+/* ── PIXEL ART BACKGROUND ── */
+.page-content {
+  position: relative;
+}
+
+.page-content::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('../Images/pixel-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.expect,
+.personal {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── FOOTER ── */
 .footer {
   position: relative;
@@ -250,7 +275,7 @@ body {
   left: 0;
   width: 100%;
   height: 200px;
-  background: linear-gradient(to top, #0F1013 0%, rgba(5, 7, 13, 0.55) 60%, #0F1013 100%);
+  background: linear-gradient(to top, #0F1013, rgba(5, 7, 13, 0));
 }
 
 .footer-inner {
@@ -286,22 +311,37 @@ body {
   transition: 0.3s ease;
 }
 
-/* ── RESPONSIVE ── */
+/* ════════════════════════════════
+   RESPONSIVE — TABLET (≤ 1024px)
+   ════════════════════════════════ */
 @media (max-width: 1024px) {
-  .hero__inner,
-  .expect,
+
+  .hero__inner {
+    padding: 0 48px 64px;
+    gap: 40px;
+  }
+
+  .hero__photo {
+    width: 260px;
+  }
+
+  .expect {
+    padding: 80px 48px;
+  }
+
   .personal {
-    padding-left: 48px;
-    padding-right: 48px;
+    padding: 80px 48px;
   }
 
   .expect__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 
-  .expect__grid .expect__item:nth-child(3) {
-    grid-column: 1;
-  }
+  /* reset explicit column placement for 2-col grid */
+  .expect__grid .expect__item:nth-child(1) { grid-column: 1; }
+  .expect__grid .expect__item:nth-child(2) { grid-column: 2; }
+  .expect__grid .expect__item:nth-child(3) { grid-column: 1; }
 
   .personal__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -310,34 +350,66 @@ body {
   .personal__grid .personal-card:last-child {
     grid-column: span 2;
   }
+
+  .footer-inner {
+    gap: 60px;
+  }
 }
 
+/* ════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 768px)
+   ════════════════════════════════ */
 @media (max-width: 768px) {
+
+  .nav-links {
+    gap: 12px;
+    padding: 20px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  /* hero: stack vertically, photo below text */
   .hero__inner {
     grid-template-columns: 1fr;
-    padding: 0 24px 60px;
-    gap: 40px;
+    padding: 0 24px 48px;
+    gap: 32px;
+    align-items: start;
   }
+
+  /* show photo after text on mobile */
+  .hero__left  { order: 1; }
+  .hero__photo { order: 2; }
 
   .hero__photo {
     width: 100%;
   }
 
   .hero__photo img {
-    height: 280px;
+    height: 300px;
   }
 
-  .expect,
+  .expect {
+    padding: 60px 24px;
+  }
+
   .personal {
     padding: 60px 24px;
   }
 
   .expect__grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .expect__grid .expect__item {
-    grid-column: 1 !important;
+  /* override all explicit column positions */
+  .expect__grid .expect__item:nth-child(1),
+  .expect__grid .expect__item:nth-child(2),
+  .expect__grid .expect__item:nth-child(3) {
+    grid-column: 1;
   }
 
   .personal__grid {
@@ -348,12 +420,12 @@ body {
     grid-column: span 1;
   }
 
-  .footer-inner {
-    flex-direction: column;
-    gap: 32px;
+  .footer {
+    margin: 60px 16px;
   }
 
-  .nav-links {
-    gap: 20px;
+  .footer-inner {
+    flex-direction: column;
+    gap: 28px;
   }
 }

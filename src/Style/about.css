@@ -46,11 +46,6 @@ body {
   opacity: 0.6;
 }
 
-.nav-active {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  padding: 6px 16px;
-  border-radius: 20px;
-}
 
 /* ── HERO ── */
 .hero {
@@ -116,9 +111,7 @@ body {
 .hero__photo {
   width: 350px;
   flex-shrink: 0;
-  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   align-self: end;
 }
 
@@ -186,7 +179,6 @@ body {
 
 .personal-card {
   background: #1F2228;
-  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;

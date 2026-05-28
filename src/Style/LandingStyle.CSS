@@ -109,7 +109,6 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 16px 28px;
-  border-radius: 20px;
   cursor: pointer;
   transition:
     background-color 0.35s ease,
@@ -160,16 +159,15 @@ a {
 
 .card-top {
   height: 320px;
-  background: #375ECC;
+  background: #191F31;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
-  border-radius: 16px 16px 0 0;
 }
 
 .card-top.alt-bg {
-  background: #E8B04C;
+  background: #1F2228;
 }
 
 .card-image {
@@ -188,10 +186,13 @@ a {
 }
 
 .card-bottom {
-  background: #1F2228;
+  background: #0F1013;
   padding: 18px 20px 22px 20px;
-  border-radius: 0 0 16px 16px;
   flex: 1;
+}
+
+.card-bottomAlt {
+  background: #13161E;
 }
 
 .card-title {
@@ -231,9 +232,9 @@ a {
   height: 82%;
 }
 
-.small-bg  { background: #375ECC; }
-.small-bg-2 { background: #E8B04C; }
-.small-bg-3 { background: #3C8721; }
+.small-bg  { background: #191F31; }
+.small-bg-2 { background: #1F2228; }
+.small-bg-3 { background: #191F31; }
 
 /* ── FOOTER ── */
 .footer {

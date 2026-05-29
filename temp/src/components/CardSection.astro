@@ -1,0 +1,35 @@
+---
+const { title } = Astro.props;
+---
+
+  <section class="projects">
+    <h2>{title}</h2>
+    <div class="projects-inner">
+        <slot />
+    </div>
+  </section>
+
+  <style>
+  .projects {
+    padding: 80px 120px;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .projects-inner {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 50px;
+    width: 100%;
+  }
+
+  .projects h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+  }
+
+  </style>

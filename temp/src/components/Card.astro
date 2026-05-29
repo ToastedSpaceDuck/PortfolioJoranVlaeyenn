@@ -1,0 +1,87 @@
+---
+const { title, description, image, topcolor, bottomcolor, size } = Astro.props;
+---
+
+<div class:list={["card", { small: size === "small" }]}>
+    <a href="/case-study">
+        <div class="card-top">
+            <div class="card-image">
+                <img src={image} alt={title} />
+            </div>
+        </div>
+        <div class="card-bottom">
+            <h3 class="card-title">{title}</h3>
+            <p class="card-text">{description}</p>
+        </div>
+    </a>
+</div>
+
+<style define:vars={{ topcolor, bottomcolor }}>
+    .card {
+        width: 100%;
+        justify-self: start;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .card-top {
+        height: 320px;
+        background: var(--topcolor);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        overflow: hidden;
+    }
+
+    .card-image {
+        width: 85%;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+
+        transition: transform 0.4s ease;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom center;
+    }
+
+    .card-bottom {
+        background: var(--bottomcolor);
+        padding: 18px 20px 22px 20px;
+        height: 200px;
+    }
+
+    .card-title {
+        font-family: "Space Mono", monospace;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #b8b8b8;
+    }
+
+    .card:hover .card-image {
+        transform: scale(1.05);
+    }
+
+    .card.small .card-top {
+        height: 200px;
+    }
+
+    .card.small .card-bottom {
+        height: 175px;
+    }
+</style>

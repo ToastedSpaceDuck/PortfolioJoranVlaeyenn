@@ -1,0 +1,89 @@
+---
+
+---
+
+<footer class="footer footer-fade">
+  <div class="footer-item">
+    <span class="label">Phone</span>
+    <span class="value">+32 471 81 26 07</span>
+  </div>
+  <div class="footer-item">
+    <span class="label">Email</span>
+    <span class="value">joran.vlaeyen301@gmail.com</span>
+  </div>
+  <div class="footer-item">
+    <span class="label">LinkedIn</span>
+    <a
+      href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9"
+      class="value link"
+      target="_blank">LinkedIn</a
+    >
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #0f1013;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+  }
+
+  .footer-fade {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #0f1013, rgba(5, 7, 13, 0));
+  }
+
+  .footer-inner {
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    width: 250px;
+  }
+
+  .footer-item .label {
+    font-family: "Space Mono", monospace;
+    font-size: 14px;
+    color: #8a8f98;
+  }
+
+  .footer-item .value {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-item .link:hover {
+    opacity: 0.7;
+    transition: 0.3s ease;
+  }
+
+  @media (max-width: 1024px) {
+    .footer-inner {
+      gap: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      margin: 60px 16px;
+    }
+    .footer-inner {
+      flex-direction: column;
+      gap: 28px;
+    }
+  }
+</style>

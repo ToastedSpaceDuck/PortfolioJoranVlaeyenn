@@ -11,7 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
 .navbar {
   position: fixed;
   top: 0;
@@ -46,8 +45,6 @@ body {
   opacity: 0.6;
 }
 
-
-/* ── HERO ── */
 .hero {
   position: relative;
   width: 100%;
@@ -123,7 +120,6 @@ body {
   display: block;
 }
 
-/* ── SHARED SECTION STYLES ── */
 .section-title {
   font-family: 'Space Mono', monospace;
   font-size: clamp(22px, 2.5vw, 36px);
@@ -131,7 +127,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* ── WHAT I EXPECT ── */
 .expect {
   padding: 100px 120px;
   max-width: 1400px;
@@ -145,9 +140,17 @@ body {
   gap: 48px;
 }
 
-.expect__grid .expect__item:nth-child(1) { grid-column: 1; }
-.expect__grid .expect__item:nth-child(2) { grid-column: 2; }
-.expect__grid .expect__item:nth-child(3) { grid-column: 1; }
+.expect__grid .expect__item:nth-child(1) {
+  grid-column: 1;
+}
+
+.expect__grid .expect__item:nth-child(2) {
+  grid-column: 2;
+}
+
+.expect__grid .expect__item:nth-child(3) {
+  grid-column: 1;
+}
 
 .expect__item h3 {
   font-family: 'Space Mono', monospace;
@@ -161,10 +164,8 @@ body {
   font-size: 15px;
   line-height: 1.75;
   color: #EDF4FA;
-  /* no fixed width — let it flow naturally */
 }
 
-/* ── PERSONAL LIFE ── */
 .personal {
   padding: 100px 120px;
   max-width: 1400px;
@@ -227,7 +228,6 @@ body {
   color: #B8B8B8;
 }
 
-/* ── PIXEL ART BACKGROUND ── */
 .page-content {
   position: relative;
 }
@@ -251,7 +251,6 @@ body {
   z-index: 1;
 }
 
-/* ── FOOTER ── */
 .footer {
   position: relative;
   background: #0F1013;
@@ -303,9 +302,6 @@ body {
   transition: 0.3s ease;
 }
 
-/* ════════════════════════════════
-   RESPONSIVE — TABLET (≤ 1024px)
-   ════════════════════════════════ */
 @media (max-width: 1024px) {
 
   .hero__inner {
@@ -330,10 +326,17 @@ body {
     gap: 32px;
   }
 
-  /* reset explicit column placement for 2-col grid */
-  .expect__grid .expect__item:nth-child(1) { grid-column: 1; }
-  .expect__grid .expect__item:nth-child(2) { grid-column: 2; }
-  .expect__grid .expect__item:nth-child(3) { grid-column: 1; }
+  .expect__grid .expect__item:nth-child(1) {
+    grid-column: 1;
+  }
+
+  .expect__grid .expect__item:nth-child(2) {
+    grid-column: 2;
+  }
+
+  .expect__grid .expect__item:nth-child(3) {
+    grid-column: 1;
+  }
 
   .personal__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -348,9 +351,6 @@ body {
   }
 }
 
-/* ════════════════════════════════
-   RESPONSIVE — MOBILE (≤ 768px)
-   ════════════════════════════════ */
 @media (max-width: 768px) {
 
   .nav-links {
@@ -364,7 +364,6 @@ body {
     font-size: 12px;
   }
 
-  /* hero: stack vertically, photo below text */
   .hero__inner {
     grid-template-columns: 1fr;
     padding: 0 24px 48px;
@@ -372,9 +371,13 @@ body {
     align-items: start;
   }
 
-  /* show photo after text on mobile */
-  .hero__left  { order: 1; }
-  .hero__photo { order: 2; }
+  .hero__left {
+    order: 1;
+  }
+
+  .hero__photo {
+    order: 2;
+  }
 
   .hero__photo {
     width: 100%;
@@ -397,7 +400,6 @@ body {
     gap: 28px;
   }
 
-  /* override all explicit column positions */
   .expect__grid .expect__item:nth-child(1),
   .expect__grid .expect__item:nth-child(2),
   .expect__grid .expect__item:nth-child(3) {

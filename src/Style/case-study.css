@@ -11,7 +11,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
 .navbar {
   position: fixed;
   top: 0;
@@ -46,7 +45,6 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* ── HERO ── */
 .cs-hero {
   padding: 180px 80px 64px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -79,14 +77,12 @@ body {
   font-family: 'Space Mono', monospace;
 }
 
-/* ── MAIN CONTENT ── */
 .cs-main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 80px;
 }
 
-/* ── SECTIONS ── */
 .cs-section {
   display: grid;
   grid-template-columns: 60px 1fr;
@@ -95,10 +91,8 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* card-style section with slightly lighter bg */
 .cs-section--card {
   background: #1F2228;
-  /* border-radius: 16px; */
   padding: 48px;
   grid-template-columns: 60px 1fr;
   margin: 0 -48px;
@@ -136,7 +130,6 @@ body {
   max-width: 100%;
 }
 
-/* ── SUB TITLES ── */
 .sub-title {
   font-family: 'Space Mono', monospace;
   font-size: 16px;
@@ -145,7 +138,6 @@ body {
   margin-top: 12px;
 }
 
-/* ── THREE COLUMN GRID ── */
 .three-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -153,11 +145,9 @@ body {
   margin-top: 8px;
 }
 
-/* ── INFO CARDS (findings / structure) ── */
 .info-card {
   background: #13161E;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* border-radius: 12px; */
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -182,11 +172,9 @@ body {
   line-height: 1.6 !important;
 }
 
-/* ── INSIGHT CARDS ── */
 .insight-card {
   background: #13161E;
   border: 1px solid rgba(55, 94, 204, 0.3);
-  /* border-radius: 12px; */
   padding: 24px;
 }
 
@@ -196,7 +184,6 @@ body {
   line-height: 1.65 !important;
 }
 
-/* ── IDEA CARDS ── */
 .ideas {
   margin-top: 16px;
 }
@@ -204,7 +191,6 @@ body {
 .idea-card {
   background: #13161E;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* border-radius: 12px; */
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -249,11 +235,9 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ── CONCLUSION NOTE ── */
 .conclusion-note {
   background: #13161E;
   border-left: 3px solid #375ECC;
-  /* border-radius: 0 8px 8px 0; */
   padding: 16px 20px;
   font-size: 14px !important;
   color: #B8B8B8 !important;
@@ -261,7 +245,6 @@ body {
   max-width: 100% !important;
 }
 
-/* ── OBJECTIVES ── */
 .objectives {
   list-style: none;
   display: flex;
@@ -288,10 +271,8 @@ body {
   color: white;
 }
 
-/* ── TABLE ── */
 .table-wrap {
   overflow-x: auto;
-  /* border-radius: 12px; */
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -346,7 +327,6 @@ body {
   color: white;
 }
 
-/* ── LESSONS ── */
 .lessons {
   list-style: none;
   display: flex;
@@ -369,7 +349,6 @@ body {
   color: #375ECC;
 }
 
-/* ── TIMELINE ── */
 .timeline {
   margin-top: 8px;
 }
@@ -383,7 +362,6 @@ body {
 
 .timeline__phase {
   padding: 14px 16px;
-  /* border-radius: 10px; */
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -416,7 +394,6 @@ body {
   padding-top: 8px;
 }
 
-/* Each label spans 2 columns to align with the phase blocks above */
 .timeline__weeks span {
   font-family: 'Space Mono', monospace;
   font-size: 11px;
@@ -433,8 +410,6 @@ body {
   text-align: right;
 }
 
-
-/* ── SUMMARY LAYOUT ── */
 .summary-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -444,7 +419,6 @@ body {
 
 .mockup-slot {
   background: #375ECC;
-  /* border-radius: 16px 16px 16px 16px; */
   overflow: hidden;
   height: 320px;
   display: flex;
@@ -465,7 +439,6 @@ body {
   }
 }
 
-/* ── FOOTER ── */
 .footer {
   position: relative;
   background: #05070D;
@@ -517,7 +490,6 @@ body {
   transition: 0.3s ease;
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .cs-hero,
   .cs-main {
@@ -556,7 +528,6 @@ body {
 
   .cs-section--card {
     margin: 0;
-    /* border-radius: 12px; */
   }
 
   .timeline__track {
@@ -579,7 +550,6 @@ body {
   }
 }
 
-/* ── GALLERY ── */
 .case-gallery {
   margin-top: 120px;
   padding: 0 80px;
@@ -613,7 +583,6 @@ body {
 
 .gallery-item {
   position: relative;
-  /* border-radius: 16px; */
   overflow: hidden;
   cursor: pointer;
   height: 240px;
@@ -633,7 +602,6 @@ body {
   object-fit: cover;
 }
 
-/* ── LIGHTBOX ── */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -656,7 +624,6 @@ body {
 .lightbox-img {
   max-width: 90%;
   max-height: 90%;
-  /* border-radius: 20px; */
   object-fit: contain;
 }
 
@@ -670,7 +637,6 @@ body {
   font-family: 'Space Mono', monospace;
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -692,7 +658,6 @@ body {
   }
 }
 
-/* ── LIGHTBOX CONTENT ── */
 .lightbox-content {
   width: 100%;
   max-width: 1400px;
@@ -705,7 +670,6 @@ body {
 .lightbox-info {
   background: #13161E;
   border: 1px solid rgba(255,255,255,0.08);
-  /* border-radius: 20px; */
   padding: 40px;
 }
 
@@ -746,4 +710,3 @@ body {
     font-size: 22px;
   }
 }
-

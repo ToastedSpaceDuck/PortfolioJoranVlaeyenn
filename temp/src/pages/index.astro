@@ -5,7 +5,6 @@ import CardSection from "../components/CardSection.astro";
 ---
 
 <BaseLayout title="Joran Vlaeyen" activePage="home">
-  <!-- HERO -->
   <header class="hero">
     <img src="/public/Background.jpeg" alt="" />
     <div class="hero-fade"></div>
@@ -32,7 +31,6 @@ import CardSection from "../components/CardSection.astro";
     </div>
   </header>
 
-  <!-- CASE STUDIES -->
   <CardSection title="In-depth case studies">
     <Card
       title="Graduate thesis"
@@ -82,7 +80,6 @@ import CardSection from "../components/CardSection.astro";
 </BaseLayout>
 
 <style>
-  /* ── HERO ── */
   .hero {
     position: relative;
     width: 100%;
@@ -177,7 +174,6 @@ import CardSection from "../components/CardSection.astro";
     color: #0f1013;
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 1024px) {
     .hero-inner {
       padding: 0 48px 64px;

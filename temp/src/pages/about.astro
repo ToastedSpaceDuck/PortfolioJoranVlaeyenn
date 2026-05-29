@@ -1,0 +1,346 @@
+---
+import Card from "../components/Card.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardSection from "../components/CardSection.astro";
+import Expect from "../components/Expect.astro";
+---
+
+<BaseLayout title="About me" activePage="about">
+    <header class="hero">
+        <img src="/public/BackgroundAbout.jpeg" alt="" class="hero__bg" />
+        <div class="hero__fade"></div>
+
+        <div class="hero__content">
+            <div class="hero__inner">
+                <div class="hero__left">
+                    <h1>
+                        I didn't start out in UX; I started by designing things
+                        that had to work.
+                    </h1>
+                    <p>Hi, I'm Joran!</p>
+                    <p>
+                        In high school, I took a woodworking course, where I
+                        learned technical drawing, designed furniture in both 2D
+                        and 3D, and even programmed CNC machines. That's where I
+                        developed a structured way of thinking: how things are
+                        built, how they function, and how everything fits
+                        together.
+                    </p>
+                    <p>
+                        Later, I switched to applied computer science. Although
+                        programming itself wasn't quite my thing, it did give me
+                        a good understanding of how digital products work.
+                    </p>
+                    <p>
+                        That combination eventually led me to digital design,
+                        where I found the perfect balance between logic,
+                        structure, and creativity. Through UI and UX, I realized
+                        that this is where I want to focus my efforts.
+                    </p>
+                </div>
+
+                <div class="hero__photo">
+                    <img src="/public/Portrtait.png" alt="Portrait" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <CardSection title="What I'm looking for in UX"> 
+            <Expect
+                title="Understanding people"
+                description="What attracts me most to UX is understanding how people interact with products and where things go wrong. I naturally analyze interfaces whether it's a website, an app, or even a game. When something feels off, I immediately start questioning why."
+            />
+
+            <Expect
+                title="Solving problems"
+                description="I'm especially driven by fixing frustrating experiences: unclear flows, unnecessary steps, and inconsistencies that break the user's trust. My goal is to grow into a UX-focused product designer who builds solutions based on research and real user insights not assumptions."
+            />
+
+            <Expect
+                title="Growing as a designer"
+                description="As I'm starting my career, I'm actively focused on building experience through projects and continuously improving my portfolio. I see this phase as an opportunity to refine how I think, work, and solve problems as a designer."
+            />
+    </CardSection>
+
+
+    <CardSection title="My personal life">
+            <Card
+                title="My hobbies"
+                description="You'll usually find me in the mountains, going on hikes or just enjoying the calm that comes with it. It's something that helps me reset and think more clearly."
+                image="/public/mountain.jpeg"
+                topcolor="#191F31"
+                bottomcolor="#0F1013"
+                fullimage={true}
+            />
+        
+           <Card
+                title="My Evenings"
+                description="I also enjoy spending time with friends whether that's gaming in the evening or going out."
+                image="/public/Cafe.jpeg"
+                topcolor="#191F31"
+                bottomcolor="#0F1013"
+                fullimage={true}
+            />
+
+            <Card
+                title="My interests"
+                description="Recently, I've been getting more interested in astronomy. I even have a telescope, and I'm exploring more about what's out there beyond our planet."
+                image="/public/galaxy.jpeg"
+                topcolor="#191F31"
+                bottomcolor="#0F1013"
+                fullimage={true}
+            />
+    </CardSection>
+</BaseLayout>
+
+<style>
+ .hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+  .hero__fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      #05070d 0%,
+      #05070d77 60%,
+      #05070d 100%
+    );
+  }
+
+.hero__content {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 60px;
+  padding: 0 120px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 750px;
+}
+
+.hero__left h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(24px, 3vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.hero__left p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #EDF4FA;
+}
+
+.hero__photo {
+  width: 350px;
+  flex-shrink: 0;
+  overflow: hidden;
+  align-self: end;
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(22px, 2.5vw, 36px);
+  letter-spacing: -0.5px;
+  margin-bottom: 40px;
+}
+
+.expect {
+  padding: 100px 120px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.expect__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.expect__grid .expect__item:nth-child(1) {
+  grid-column: 1;
+}
+
+.expect__grid .expect__item:nth-child(2) {
+  grid-column: 2;
+}
+
+.expect__grid .expect__item:nth-child(3) {
+  grid-column: 1;
+}
+
+
+
+.page-content {
+  position: relative;
+}
+
+.page-content::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('../Images/pixel-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.expect,
+.personal {
+  position: relative;
+  z-index: 1;
+}
+
+
+@media (max-width: 1024px) {
+
+  .hero__inner {
+    padding: 0 48px 64px;
+    gap: 40px;
+  }
+
+  .hero__photo {
+    width: 260px;
+  }
+
+  .expect {
+    padding: 80px 48px;
+  }
+
+  .personal {
+    padding: 80px 48px;
+  }
+
+  .expect__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .expect__grid .expect__item:nth-child(1) {
+    grid-column: 1;
+  }
+
+  .expect__grid .expect__item:nth-child(2) {
+    grid-column: 2;
+  }
+
+  .expect__grid .expect__item:nth-child(3) {
+    grid-column: 1;
+  }
+
+  .personal__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .personal__grid .personal-card:last-child {
+    grid-column: span 2;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    gap: 12px;
+    padding: 20px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px 48px;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .hero__left {
+    order: 1;
+  }
+
+  .hero__photo {
+    order: 2;
+  }
+
+  .hero__photo {
+    width: 100%;
+  }
+
+  .hero__photo img {
+    height: 300px;
+  }
+
+  .expect {
+    padding: 60px 24px;
+  }
+
+  .personal {
+    padding: 60px 24px;
+  }
+
+  .expect__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .expect__grid .expect__item:nth-child(1),
+  .expect__grid .expect__item:nth-child(2),
+  .expect__grid .expect__item:nth-child(3) {
+    grid-column: 1;
+  }
+
+  .personal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .personal__grid .personal-card:last-child {
+    grid-column: span 1;
+  }
+
+</style>

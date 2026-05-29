@@ -1,8 +1,8 @@
 ---
-const { title, description, image, topcolor, bottomcolor, size } = Astro.props;
+const { title, description, image, topcolor, bottomcolor, size, fullimage } = Astro.props;
 ---
 
-<div class:list={["card", { small: size === "small" }]}>
+<div class:list={["card", { small: size === "small" , fullimage: fullimage }]}>
     <a href="/case-study">
         <div class="card-top">
             <div class="card-image">
@@ -83,5 +83,19 @@ const { title, description, image, topcolor, bottomcolor, size } = Astro.props;
 
     .card.small .card-bottom {
         height: 175px;
+    }
+
+    .card.fullimage .card-image {
+        width: 100%;
+    }
+
+    .card.fullimage .card-image img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card.fullimage .card-top {
+        height: 200px;
     }
 </style>

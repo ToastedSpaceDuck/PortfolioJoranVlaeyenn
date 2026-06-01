@@ -1,0 +1,880 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CaseHero from "../components/CaseHero.astro";
+---
+
+<BaseLayout title="Case Study" activePage="casestudy">
+    <CaseHero
+        title= "Graduate thesis: From style to system — Designing a UI‑kit for the Ibeauty webshop template"
+        CaseType="Case Study"
+        CaseNumber="01"
+        CaseTag1="UX Research"
+        CaseTag2="UI design"
+        CaseTag3="Design Systems"
+        CaseSubTag1="2025 – 2026"
+        CaseSubTag2="Graduate Thesis"
+        CaseSubTag3="Ibeauty & PXL"
+    />
+
+    <main class="cs-main">
+        <section class="cs-section">
+            <div class="cs-section__num">1.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Summary</h2>
+                <div class="summary-layout">
+                    <p>
+                        This case study describes the development process of a
+                        unified UI kit for the Ibeauty online store. The main
+                        challenge was that the existing online store varied in
+                        terms of typography, color schemes, and components,
+                        which led to a disjointed user experience and
+                        inefficiencies in development. As a UX/UI designer, I
+                        documented the inconsistencies, set up a modular design
+                        system, and applied it to the web-store designs.
+                        Internal testing with the team confirmed that this made
+                        the interface clear and usable. The result is a scalable
+                        design system with a consistent visual language.
+                    </p>
+                    <div class="mockup-slot">
+                        <img
+                            src="./Images/MockupWebshopDesktop.png"
+                            alt="Ibeauty UI kit mockup"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section__num">2.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Context</h2>
+                <p>
+                    The assignment was part of a bachelor's thesis project at
+                    Ibeauty (Hasselt) in collaboration with PXL. As a design
+                    intern, I was responsible for both the research and the
+                    execution of the redesign. The project lasted approximately
+                    2 to 3 months and included a UI audit of the current online
+                    store, the development of a UI kit, page designs, and
+                    internal testing. The goal was to create a scalable,
+                    consistent design system to make future expansions easier to
+                    implement.
+                </p>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section__num">3.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Timeline &amp; activities</h2>
+                <div class="timeline">
+                    <div class="timeline__track">
+                        <div
+                            class="timeline__phase tl--research"
+                            style="grid-column: 1 / 3;"
+                        >
+                            <span class="tl__label">Research</span>
+                            <span class="tl__desc"
+                                >UI audit current online store and compile
+                                design inconsistency catalog</span
+                            >
+                        </div>
+                        <div
+                            class="timeline__phase tl--design"
+                            style="grid-column: 2 / 6;"
+                        >
+                            <span class="tl__label">Design</span>
+                            <span class="tl__desc"
+                                >UI kit (foundations, components, and variants)</span
+                            >
+                        </div>
+                        <div
+                            class="timeline__phase tl--impl"
+                            style="grid-column: 5 / 9;"
+                        >
+                            <span class="tl__label">Implementation</span>
+                            <span class="tl__desc"
+                                >Apply the UI kit to the online store
+                                (wireframes and mock-ups)</span
+                            >
+                        </div>
+                        <div
+                            class="timeline__phase tl--test"
+                            style="grid-column: 8 / 11;"
+                        >
+                            <span class="tl__label"
+                                >Testing &amp; Iteration</span
+                            >
+                            <span class="tl__desc"
+                                >Internal usability testing and design
+                                improvements</span
+                            >
+                        </div>
+                    </div>
+                    <div class="timeline__weeks">
+                        <span>Wk 1-2</span><span>Wk 3-4</span><span>Wk 5-6</span
+                        ><span>Wk 7-8</span><span>Wk 9-10</span><span
+                            >Wk 11-12</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section__num">4.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Problems</h2>
+                <p>
+                    The Ibeauty online store exhibited visual inconsistencies:
+                    different fonts (Arial, Verdana, etc.) were used
+                    interchangeably, and there was no consistent color palette
+                    or component style. This not only increased the cognitive
+                    load on users but also made collaboration with developers
+                    more difficult. In e-commerce, a disjointed checkout
+                    experience leads to high drop-off rates. Baymard research
+                    shows that ~70% of users abandon their carts during
+                    checkout. The lack of a central design framework was
+                    therefore a major bottleneck in both user experience and
+                    business operations.
+                </p>
+            </div>
+        </section>
+
+        <section class="cs-section cs-section--card">
+            <div class="cs-section__num">4.1</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Objectives based on problems</h2>
+                <ul class="objectives">
+                    <li>
+                        <strong>Visual unity:</strong> Implementing a consistent look
+                        and feel (one primary font, defined color standards, etc.).
+                    </li>
+                    <li>
+                        <strong>Improved task completion:</strong> Users can complete
+                        tasks (e.g. checkout) faster and without errors.
+                    </li>
+                    <li>
+                        <strong>Conversion increase:</strong> Optimizing the checkout
+                        flow should lead to more purchases.
+                    </li>
+                    <li>
+                        <strong>Efficiency improvement:</strong> New pages built with
+                        the UI kit can be developed faster, saving time and money.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section__num">5.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Research and Findings</h2>
+                <p>
+                    I began with a UI audit of the existing online store. During
+                    this process, I assessed the typography, colors, and
+                    components. Key findings included:
+                </p>
+                <div class="three-grid">
+                    <div class="info-card">
+                        <h3>Typography</h3>
+                        <p>
+                            At least four different fonts were used. This
+                            disrupted the hierarchy and weakened the brand
+                            identity.
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Colors</h3>
+                        <p>
+                            The palette was cluttered, with no clear secondary
+                            colors and missing status colors (e.g. success,
+                            warning).
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Components</h3>
+                        <p>
+                            Buttons, forms, and other UI elements varied
+                            significantly from page to page. Many components
+                            needed to be redesigned or modified.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cs-section cs-section--card">
+            <div class="cs-section__num">5.1</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Key insights</h2>
+                <div class="three-grid">
+                    <div class="insight-card">
+                        <p>
+                            Design faster with reusable patterns: A centralized
+                            UI kit saves time — reusable elements allow new
+                            pages to be created in a single design style.
+                        </p>
+                    </div>
+                    <div class="insight-card">
+                        <p>
+                            Evolve toward a design system. By building the UI
+                            kit in a modular way (with foundations, components,
+                            and variants), the project provides a basis for
+                            future expansions.
+                        </p>
+                    </div>
+                    <div class="insight-card">
+                        <p>
+                            Consistency enhances usability. Inconsistencies in
+                            fonts, colors, and component styles hinder the user
+                            learning process.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section__num">6.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">
+                    Ideation phase and alternatives
+                </h2>
+                <p>I considered several approaches:</p>
+                <div class="three-grid ideas">
+                    <div class="idea-card">
+                        <div class="idea-card__num">Idea 1:</div>
+                        <h3>Ad-hoc adjustments</h3>
+                        <p>
+                            Individually fix pages here and there (but not
+                            scalable).
+                        </p>
+                    </div>
+                    <div class="idea-card idea-card--chosen">
+                        <div class="idea-card__num">Idea 2:</div>
+                        <h3>Designing a UI kit</h3>
+                        <p>
+                            Chosen approach: long-term consistency and saves a
+                            lot of work later on.
+                        </p>
+                    </div>
+                    <div class="idea-card">
+                        <div class="idea-card__num">Idea 3:</div>
+                        <h3>Complete redesign</h3>
+                        <p>
+                            Rebuild the entire web shop from scratch (high-risk
+                            alternative).
+                        </p>
+                    </div>
+                </div>
+                <p class="conclusion-note">
+                    I opted for the UI kit approach. This aligned with best
+                    practices: a UI kit offers a standardized user experience
+                    and avoids "many isolated updates" across the site. At the
+                    same time, it serves as the first step toward a full-fledged
+                    design system.
+                </p>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section__num">7.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Design Decisions</h2>
+
+                <h3 class="sub-title">7.1 Structure of the UI kit</h3>
+                <div class="three-grid">
+                    <div class="info-card">
+                        <div class="info-card__icon">⬜</div>
+                        <h3>Foundation (base styles)</h3>
+                        <p>
+                            Atomic design elements (typography, colors, grids,
+                            spacing, etc.). These form the visual foundation for
+                            the entire Ibeauty template.
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">⬛</div>
+                        <h3>Components</h3>
+                        <p>
+                            Reusable UI elements (buttons, forms, cards, etc.)
+                            with multiple variants, states, and sizes.
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__icon">▦</div>
+                        <h3>Sections</h3>
+                        <p>
+                            Ready-to-use page building blocks (e.g. product
+                            overview, checkout section) that ensure consistent
+                            layouts across pages.
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="sub-title">7.2 Key features (before/after)</h3>
+                <div class="table-wrap">
+                    <table class="comp-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Before</th>
+                                <th>After redesign (with UI kit)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Font</td>
+                                <td
+                                    >Mix of Arial, Verdana, etc. with no
+                                    hierarchy</td
+                                >
+                                <td>Single font family with consistent style</td
+                                >
+                            </tr>
+                            <tr>
+                                <td>Color scheme</td>
+                                <td>Fragmented, undefined scheme</td>
+                                <td
+                                    >Standardized palette (pink #FF3655, grey,
+                                    black)</td
+                                >
+                            </tr>
+                            <tr>
+                                <td>Button styles</td>
+                                <td>Different per page</td>
+                                <td
+                                    >Uniform component (same dimensions and
+                                    code)</td
+                                >
+                            </tr>
+                            <tr>
+                                <td>Iconography</td>
+                                <td>Mixed and outdated</td>
+                                <td>Consistent icon set</td>
+                            </tr>
+                            <tr>
+                                <td>Page layout</td>
+                                <td>Inconsistent sections and grids</td>
+                                <td
+                                    >Reusable layout patterns (e.g. grid for
+                                    products)</td
+                                >
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="sub-title">7.3 Checkout flow</h3>
+                <p>
+                    Each of these steps now uses standardized UI components with
+                    clear feedback. According to Baymard's research guidelines,
+                    such improvements are crucial for preventing drop-offs.
+                </p>
+            </div>
+        </section>
+
+        <section class="cs-section cs-section--card">
+            <div class="cs-section__num">8.</div>
+            <div class="cs-section__body">
+                <h2 class="cs-section__title">Results and lessons learned</h2>
+
+                <h3 class="sub-title">8.1 Results</h3>
+                <p>
+                    By implementing the UI kit, the interface is now uniform and
+                    reliable. Consistent feedback and navigation elements make
+                    the process predictable for users. Research shows that this
+                    is crucial for user trust and conversion. Brand consistency
+                    has been strengthened and its maintenance has been
+                    simplified: developers can quickly assemble components using
+                    clear guidelines.
+                </p>
+                <p>
+                    Ultimately, this project marks the first step toward a
+                    design system. The core principles are documented in the UI
+                    kit, meaning expansions — such as a mobile app — can be
+                    implemented quickly without visual inconsistencies. The
+                    positive internal feedback demonstrates that we have
+                    achieved our goals.
+                </p>
+
+                <h3 class="sub-title">8.2 Lessons learned</h3>
+                <ul class="lessons">
+                    <li>
+                        A systematic approach works. Early and frequent testing
+                        (as recommended by Nielsen) quickly yielded actionable
+                        insights.
+                    </li>
+                    <li>
+                        Comprehensive documentation helps. We provided numerous
+                        wireframes, mock-ups, and test results to support our
+                        design.
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
+
+<style>
+/* ── MAIN CONTENT ── */
+.cs-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+/* ── SECTIONS ── */
+.cs-section {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 0 40px;
+  padding: 72px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* card-style section with slightly lighter bg */
+.cs-section--card {
+  background: #1F2228;
+  /* border-radius: 16px; */
+  padding: 48px;
+  grid-template-columns: 60px 1fr;
+  margin: 0 -48px;
+  border-bottom: none;
+  margin-bottom: -1px;
+}
+
+.cs-section__num {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: #8A8F98;
+  padding-top: 6px;
+  letter-spacing: 0.06em;
+}
+
+.cs-section__body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-section__title {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(20px, 2.5vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.cs-section__body p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #B8B8B8;
+  max-width: 100%;
+}
+
+/* ── SUB TITLES ── */
+.sub-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+  color: white;
+  margin-top: 12px;
+}
+
+/* ── THREE COLUMN GRID ── */
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* ── INFO CARDS (findings / structure) ── */
+.info-card {
+  background: #13161E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* border-radius: 12px; */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-card__icon {
+  font-size: 22px;
+  opacity: 0.5;
+}
+
+.info-card h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+.info-card p {
+  font-size: 14px !important;
+  color: #8A8F98 !important;
+  line-height: 1.6 !important;
+}
+
+/* ── INSIGHT CARDS ── */
+.insight-card {
+  background: #13161E;
+  border: 1px solid rgba(55, 94, 204, 0.3);
+  /* border-radius: 12px; */
+  padding: 24px;
+}
+
+.insight-card p {
+  font-size: 14px !important;
+  color: #B8B8B8 !important;
+  line-height: 1.65 !important;
+}
+
+/* ── IDEA CARDS ── */
+.ideas {
+  margin-top: 16px;
+}
+
+.idea-card {
+  background: #13161E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* border-radius: 12px; */
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.idea-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.idea-card--chosen {
+  background: #375ECC;
+  border-color: #375ECC;
+}
+
+.idea-card__num {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8A8F98;
+}
+
+.idea-card--chosen .idea-card__num {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.idea-card h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: white;
+}
+
+.idea-card p {
+  font-size: 14px;
+  color: #8A8F98;
+  line-height: 1.6;
+}
+
+.idea-card--chosen p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── CONCLUSION NOTE ── */
+.conclusion-note {
+  background: #13161E;
+  border-left: 3px solid #375ECC;
+  /* border-radius: 0 8px 8px 0; */
+  padding: 16px 20px;
+  font-size: 14px !important;
+  color: #B8B8B8 !important;
+  line-height: 1.7 !important;
+  max-width: 100% !important;
+}
+
+/* ── OBJECTIVES ── */
+.objectives {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.objectives li {
+  font-size: 15px;
+  color: #B8B8B8;
+  line-height: 1.65;
+  padding-left: 20px;
+  position: relative;
+}
+
+.objectives li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #375ECC;
+}
+
+.objectives strong {
+  color: white;
+}
+
+/* ── TABLE ── */
+.table-wrap {
+  overflow-x: auto;
+  /* border-radius: 12px; */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.comp-table th {
+  background: #13161E;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 14px 18px;
+  color: #8A8F98;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.comp-table th:last-child {
+  color: #375ECC;
+}
+
+.comp-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: top;
+  color: #B8B8B8;
+  line-height: 1.5;
+}
+
+.comp-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comp-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.comp-table td:first-child {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: #8A8F98;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.comp-table td:last-child {
+  color: white;
+}
+
+/* ── LESSONS ── */
+.lessons {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lessons li {
+  font-size: 15px;
+  color: #B8B8B8;
+  line-height: 1.65;
+  padding-left: 20px;
+  position: relative;
+}
+
+.lessons li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #375ECC;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  margin-top: 8px;
+}
+
+.timeline__track {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.timeline__phase {
+  padding: 14px 16px;
+  /* border-radius: 10px; */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tl__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: white;
+}
+
+.tl__desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #B8B8B8;
+}
+
+.tl--research { background: #1a2340; }
+.tl--design   { background: #1F2228; }
+.tl--impl     { background: #1a2340; }
+.tl--test     { background: #1F2228; }
+
+.timeline__weeks {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
+}
+
+/* Each label spans 2 columns to align with the phase blocks above */
+.timeline__weeks span {
+  grid-column: span 2;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: #8A8F98;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+
+/* ── SUMMARY LAYOUT ── */
+.summary-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.mockup-slot {
+  background: #375ECC;
+  /* border-radius: 16px 16px 16px 16px; */
+  overflow: hidden;
+  height: 320px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.mockup-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+@media (max-width: 768px) {
+  .summary-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .cs-hero,
+  .cs-main {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .cs-section--card {
+    margin: 0 -24px;
+    padding: 36px 24px;
+  }
+
+  .three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-hero {
+    padding: 120px 24px 48px;
+  }
+
+  .cs-main {
+    padding: 0 24px;
+  }
+
+  .cs-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 48px 0;
+  }
+
+  .cs-section--card {
+    margin: 0;
+    /* border-radius: 12px; */
+  }
+
+  .timeline__track {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline__weeks {
+    display: none;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .lightbox-content {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-info {
+    padding: 28px;
+  }
+
+  .lightbox-info h3 {
+    font-size: 22px;
+  }
+}
+
+
+</style>

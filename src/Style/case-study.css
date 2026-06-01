@@ -606,7 +606,6 @@ body {
 
 .gallery-item {
   position: relative;
-  /* border-radius: 16px; */
   overflow: hidden;
   cursor: pointer;
   height: 240px;

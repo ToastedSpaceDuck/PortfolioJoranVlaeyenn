@@ -1,0 +1,195 @@
+---
+import GalleryItem from './GalleryItem.astro';
+
+interface GalleryItemProps {
+  src: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  label?: string;
+  title?: string;
+  items: GalleryItemProps[];
+}
+
+const { label = 'Project gallery', title = 'Selected visuals', items } = Astro.props;
+---
+
+<section class="case-gallery">
+  <div class="gallery-header">
+    <span class="gallery-label">{label}</span>
+    <h2>{title}</h2>
+  </div>
+
+  <div class="gallery-grid">
+    {items.map((item) => (
+      <GalleryItem src={item.src} title={item.title} description={item.description} />
+    ))}
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+    <div class="lightbox-info">
+      <span class="lightbox-small">Case study detail</span>
+      <h3 id="lightbox-title"></h3>
+      <p id="lightbox-description"></p>
+    </div>
+  </div>
+  <span class="lightbox-close">&times;</span>
+</div>
+
+<script>
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDescription = document.getElementById('lightbox-description');
+  const closeBtn = document.querySelector('.lightbox-close');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item as HTMLImageElement;
+      lightbox?.classList.add('active');
+      if (lightboxImg) lightboxImg.src = img.src;
+      if (lightboxTitle) lightboxTitle.textContent = img.dataset.title ?? '';
+      if (lightboxDescription) lightboxDescription.textContent = img.dataset.description ?? '';
+    });
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    lightbox?.classList.remove('active');
+  });
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('active');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox?.classList.remove('active');
+  });
+</script>
+
+<style>
+  .case-gallery {
+    margin-top: 120px;
+    padding: 0 80px;
+  }
+
+  .gallery-header {
+    margin-bottom: 32px;
+  }
+
+  .gallery-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #375ECC;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .gallery-header h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(24px, 2vw, 36px);
+    color: white;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 7, 13, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 40px;
+  }
+
+  .lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox-content {
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1.4fr 0.7fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+
+  .lightbox-info {
+    background: #13161E;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+  }
+
+  .lightbox-small {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #375ECC;
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .lightbox-info h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .lightbox-info p {
+    color: #8A8F98;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    color: white;
+    font-size: 42px;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+  }
+
+  @media (max-width: 1100px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 900px) {
+    .lightbox-content { grid-template-columns: 1fr; }
+    .lightbox-info { padding: 28px; }
+    .lightbox-info h3 { font-size: 22px; }
+  }
+
+  @media (max-width: 768px) {
+    .case-gallery { padding: 0 24px; margin-top: 80px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>

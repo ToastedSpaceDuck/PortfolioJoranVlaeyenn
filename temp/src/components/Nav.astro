@@ -13,6 +13,49 @@ const { activePage } = Astro.props;
   </div>
 </nav>
 
+<!-- HAMBURGER (mobile only) -->
+<button class="nav-hamburger" id="menuBtn" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<nav class="nav-overlay" id="navOverlay">
+  <a href="/">Home</a>
+  <div class="nav-overlay__divider"></div>
+  <a href="/about">About me</a>
+  <div class="nav-overlay__divider"></div>
+  <a href="https://drive.google.com/file/d/1qMc9I4lUaWcRX63DNwMAfDBnFipP0C3F/view?usp=sharing" target="_blank">Resume</a>
+  <div class="nav-overlay__divider"></div>
+  <a href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9" target="_blank">LinkedIn</a>
+</nav>
+
+<script>
+  const btn = document.getElementById('menuBtn');
+  const overlay = document.getElementById('navOverlay');
+
+  btn?.addEventListener('click', () => {
+    btn.classList.toggle('is-open');
+    overlay?.classList.toggle('is-open');
+    document.body.style.overflow =
+      overlay?.classList.contains('is-open') ? 'hidden' : '';
+  });
+
+  overlay?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      btn?.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay?.classList.contains('is-open')) {
+      btn?.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
 <style>
   .navbar {
     position: fixed;
@@ -46,11 +89,9 @@ const { activePage } = Astro.props;
 
   .nav-links a:hover { opacity: 0.6; }
 
-  .nav-active {
-    font-weight: 600;
-  }
+  .nav-active { font-weight: 600; }
 
-  /* hamburger */
+  /* ── HAMBURGER (hidden on desktop) ── */
   .nav-hamburger {
     display: none;
     position: fixed;
@@ -59,6 +100,7 @@ const { activePage } = Astro.props;
     z-index: 300;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
     width: 44px;
     height: 44px;
     flex-direction: column;
@@ -85,7 +127,7 @@ const { activePage } = Astro.props;
   .nav-hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
   .nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-  /* overlay */
+  /* ── OVERLAY ── */
   .nav-overlay {
     position: fixed;
     inset: 0;

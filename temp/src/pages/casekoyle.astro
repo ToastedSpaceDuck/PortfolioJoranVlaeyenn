@@ -573,7 +573,7 @@ import GalleryItem from "../components/GalleryItem.astro";
 
 .timeline__track {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 6px;
   margin-bottom: 10px;
 }
@@ -607,19 +607,21 @@ import GalleryItem from "../components/GalleryItem.astro";
 
 .timeline__weeks {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 8px;
 }
 
 .timeline__weeks span {
-  grid-column: span 2;
   font-family: 'Space Mono', monospace;
   font-size: 11px;
   color: #8A8F98;
   letter-spacing: 0.06em;
   text-align: center;
 }
+
+.timeline__weeks span:first-child { text-align: left; }
+.timeline__weeks span:last-child  { text-align: right; }
 
 .summary-layout {
   display: grid;
@@ -643,15 +645,7 @@ import GalleryItem from "../components/GalleryItem.astro";
   object-position: bottom center;
 }
 
-@media (max-width: 768px) {
-  .summary-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-
 @media (max-width: 1024px) {
-  .cs-hero,
   .cs-main {
     padding-left: 32px;
     padding-right: 32px;
@@ -660,6 +654,40 @@ import GalleryItem from "../components/GalleryItem.astro";
   .cs-section--card {
     margin: 0 -24px;
     padding: 36px 24px;
+  }
+
+  .three-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-main {
+    padding: 0 24px;
+  }
+
+  .cs-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 48px 0;
+  }
+
+  .cs-section--card {
+    margin: 0;
+    padding: 32px 24px;
+  }
+
+  .summary-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline__track {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timeline__weeks {
+    display: none;
   }
 
   .three-grid {

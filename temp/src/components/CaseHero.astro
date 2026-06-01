@@ -2,46 +2,55 @@
 const { title, CaseType, CaseNumber, CaseTag1, CaseTag2, CaseTag3, CaseSubTag1, CaseSubTag2, CaseSubTag3 } = Astro.props;
 ---
 
-    <header class="cs-hero">
-        <div class="cs-hero__label">{CaseType} — {CaseNumber}</div>
-        <h1 class="cs-hero__title">
-            {title}
-        </h1>
-        <div class="cs-hero__meta">
-            <span>{CaseTag1} · {CaseTag2} · {CaseTag3}</span>
-            <span>{CaseSubTag1} · {CaseSubTag2} · {CaseSubTag3}</span>
-        </div>
-    </header>
+<header class="cs-hero">
+  <div class="cs-hero__label">{CaseType} — {CaseNumber}</div>
+  <h1 class="cs-hero__title">{title}</h1>
+  <div class="cs-hero__meta">
+    <span>{CaseTag1} · {CaseTag2} · {CaseTag3}</span>
+    <span>{CaseSubTag1} · {CaseSubTag2} · {CaseSubTag3}</span>
+  </div>
+</header>
 
-    <style>
-        .cs-hero {
-  padding: 180px 80px 64px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
+<style>
+  .cs-hero {
+    padding: 180px 80px 64px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-.cs-hero__label {
-  font-family: 'Space Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #375ECC;
-  margin-bottom: 28px;
-}
+  .cs-hero__label {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #375ECC;
+    margin-bottom: 28px;
+  }
 
-.cs-hero__title {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(22px, 2.8vw, 42px);
-  line-height: 1.15;
-  letter-spacing: -1px;
-  margin-bottom: 32px;
-  max-width: 900px;
-}
+  .cs-hero__title {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(22px, 2.8vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 32px;
+    max-width: 900px;
+  }
 
-.cs-hero__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 40px;
-  font-size: 14px;
-  color: #8A8F98;
-  font-family: 'Space Mono', monospace;
-}
+  .cs-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 40px;
+    font-size: 14px;
+    color: #8A8F98;
+    font-family: 'Space Mono', monospace;
+  }
+
+  @media (max-width: 1024px) {
+    .cs-hero { padding: 140px 48px 48px; }
+  }
+
+  @media (max-width: 768px) {
+    .cs-hero { padding: 100px 24px 40px; }
+    .cs-hero__title { font-size: clamp(20px, 5vw, 28px); margin-bottom: 20px; }
+    .cs-hero__meta { font-size: 12px; gap: 6px 20px; }
+  }
+</style>

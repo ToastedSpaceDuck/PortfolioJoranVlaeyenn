@@ -430,14 +430,12 @@ const galleryItems = [
 </BaseLayout>
 
 <style>
-/* ── MAIN CONTENT ── */
 .cs-main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 80px;
 }
 
-/* ── SECTIONS ── */
 .cs-section {
   display: grid;
   grid-template-columns: 60px 1fr;
@@ -446,7 +444,6 @@ const galleryItems = [
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* card-style section with slightly lighter bg */
 .cs-section--card {
   background: #1F2228;
   /* border-radius: 16px; */
@@ -487,7 +484,6 @@ const galleryItems = [
   max-width: 100%;
 }
 
-/* ── SUB TITLES ── */
 .sub-title {
   font-family: 'Space Mono', monospace;
   font-size: 16px;
@@ -496,7 +492,6 @@ const galleryItems = [
   margin-top: 12px;
 }
 
-/* ── THREE COLUMN GRID ── */
 .three-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -504,11 +499,9 @@ const galleryItems = [
   margin-top: 8px;
 }
 
-/* ── INFO CARDS (findings / structure) ── */
 .info-card {
   background: #13161E;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* border-radius: 12px; */
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -533,11 +526,9 @@ const galleryItems = [
   line-height: 1.6 !important;
 }
 
-/* ── INSIGHT CARDS ── */
 .insight-card {
   background: #13161E;
   border: 1px solid rgba(55, 94, 204, 0.3);
-  /* border-radius: 12px; */
   padding: 24px;
 }
 
@@ -547,7 +538,6 @@ const galleryItems = [
   line-height: 1.65 !important;
 }
 
-/* ── IDEA CARDS ── */
 .ideas {
   margin-top: 16px;
 }
@@ -555,7 +545,6 @@ const galleryItems = [
 .idea-card {
   background: #13161E;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* border-radius: 12px; */
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -600,11 +589,9 @@ const galleryItems = [
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ── CONCLUSION NOTE ── */
 .conclusion-note {
   background: #13161E;
   border-left: 3px solid #375ECC;
-  /* border-radius: 0 8px 8px 0; */
   padding: 16px 20px;
   font-size: 14px !important;
   color: #B8B8B8 !important;
@@ -612,7 +599,6 @@ const galleryItems = [
   max-width: 100% !important;
 }
 
-/* ── OBJECTIVES ── */
 .objectives {
   list-style: none;
   display: flex;
@@ -639,10 +625,8 @@ const galleryItems = [
   color: white;
 }
 
-/* ── TABLE ── */
 .table-wrap {
   overflow-x: auto;
-  /* border-radius: 12px; */
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -697,7 +681,6 @@ const galleryItems = [
   color: white;
 }
 
-/* ── LESSONS ── */
 .lessons {
   list-style: none;
   display: flex;
@@ -720,7 +703,6 @@ const galleryItems = [
   color: #375ECC;
 }
 
-/* ── TIMELINE ── */
 .timeline {
   margin-top: 8px;
 }
@@ -734,7 +716,6 @@ const galleryItems = [
 
 .timeline__phase {
   padding: 14px 16px;
-  /* border-radius: 10px; */
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -767,7 +748,6 @@ const galleryItems = [
   padding-top: 8px;
 }
 
-/* Each label spans 2 columns to align with the phase blocks above */
 .timeline__weeks span {
   grid-column: span 2;
   font-family: 'Space Mono', monospace;
@@ -777,8 +757,6 @@ const galleryItems = [
   text-align: center;
 }
 
-
-/* ── SUMMARY LAYOUT ── */
 .summary-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -788,7 +766,6 @@ const galleryItems = [
 
 .mockup-slot {
   background: #375ECC;
-  /* border-radius: 16px 16px 16px 16px; */
   overflow: hidden;
   height: 320px;
   display: flex;
@@ -809,8 +786,6 @@ const galleryItems = [
   }
 }
 
-
-/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .cs-hero,
   .cs-main {
@@ -849,7 +824,6 @@ const galleryItems = [
 
   .cs-section--card {
     margin: 0;
-    /* border-radius: 12px; */
   }
 
   .timeline__track {

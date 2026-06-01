@@ -1,8 +1,7 @@
 ---
-
 ---
 
-<footer class="footer footer-fade">
+<footer class="footer">
   <div class="footer-item">
     <span class="label">Phone</span>
     <span class="value">+32 471 81 26 07</span>
@@ -13,37 +12,19 @@
   </div>
   <div class="footer-item">
     <span class="label">LinkedIn</span>
-    <a
-      href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9"
-      class="value link"
-      target="_blank">LinkedIn</a
-    >
+    <a href="https://www.linkedin.com/in/joran-vlaeyen-4023252b9" class="value link" target="_blank">LinkedIn</a>
   </div>
 </footer>
 
 <style>
   .footer {
-    background: #0f1013;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 120px;
-  }
-
-  .footer-fade {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
     background: linear-gradient(to top, #0f1013, rgba(5, 7, 13, 0));
-  }
-
-  .footer-inner {
     display: flex;
-    gap: 120px;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    gap: 120px;
+    padding: 80px 24px 60px;
+    margin-top: 60px;
   }
 
   .footer-item {
@@ -72,18 +53,16 @@
   }
 
   @media (max-width: 1024px) {
-    .footer-inner {
-      gap: 60px;
-    }
+    .footer { gap: 60px; }
   }
 
   @media (max-width: 768px) {
     .footer {
-      margin: 60px 16px;
-    }
-    .footer-inner {
       flex-direction: column;
       gap: 28px;
+      padding: 60px 24px 40px;
     }
+
+    .footer-item { width: 100%; }
   }
 </style>

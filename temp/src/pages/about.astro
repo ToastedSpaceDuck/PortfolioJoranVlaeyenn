@@ -3,6 +3,7 @@ import Card from "../components/Card.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CardSection from "../components/CardSection.astro";
 import Expect from "../components/Expect.astro";
+import TabSection from "../components/TabSection.astro";
 ---
 
 <BaseLayout title="About me" activePage="about">
@@ -12,11 +13,29 @@ import Expect from "../components/Expect.astro";
     <div class="hero__content">
       <div class="hero__inner">
         <div class="hero__left">
-          <h1>I didn't start out in UX; I started by designing things that had to work.</h1>
+          <h1>
+            I didn't start out in UX; I started by designing things that had to
+            work.
+          </h1>
           <p>Hi, I'm Joran!</p>
-          <p>In high school, I took a woodworking course, where I learned technical drawing, designed furniture in both 2D and 3D, and even programmed CNC machines. That's where I developed a structured way of thinking: how things are built, how they function, and how everything fits together.</p>
-          <p>Later, I switched to applied computer science. Although programming itself wasn't quite my thing, it did give me a good understanding of how digital products work.</p>
-          <p>That combination eventually led me to digital design, where I found the perfect balance between logic, structure, and creativity. Through UI and UX, I realized that this is where I want to focus my efforts.</p>
+          <p>
+            In high school, I took a woodworking course, where I learned
+            technical drawing, designed furniture in both 2D and 3D, and even
+            programmed CNC machines. That's where I developed a structured way
+            of thinking: how things are built, how they function, and how
+            everything fits together.
+          </p>
+          <p>
+            Later, I switched to applied computer science. Although programming
+            itself wasn't quite my thing, it did give me a good understanding of
+            how digital products work.
+          </p>
+          <p>
+            That combination eventually led me to digital design, where I found
+            the perfect balance between logic, structure, and creativity.
+            Through UI and UX, I realized that this is where I want to focus my
+            efforts.
+          </p>
         </div>
         <div class="hero__photo">
           <img src="/Portrtait.png" alt="Portrait" />
@@ -25,25 +44,61 @@ import Expect from "../components/Expect.astro";
     </div>
   </header>
 
-  <CardSection title="What I'm looking for in UX">
-    <Expect
-      title="Understanding people"
-      description="What attracts me most to UX is understanding how people interact with products and where things go wrong. I naturally analyze interfaces whether it's a website, an app, or even a game. When something feels off, I immediately start questioning why."
-    />
-    <Expect
-      title="Solving problems"
-      description="I'm especially driven by fixing frustrating experiences: unclear flows, unnecessary steps, and inconsistencies that break the user's trust. My goal is to grow into a UX-focused product designer who builds solutions based on research and real user insights not assumptions."
-    />
-    <Expect
-      title="Growing as a designer"
-      description="As I'm starting my career, I'm actively focused on building experience through projects and continuously improving my portfolio. I see this phase as an opportunity to refine how I think, work, and solve problems as a designer."
-    />
-  </CardSection>
+  <TabSection
+    title="About me"
+    tabs={[
+      {
+        label: "My strengths",
+        items: [
+          { title: "Clear Priorities", description: "I efficiently prioritize tasks by importance and can immediately see what requires immediate attention." },
+          { title: "Communication", description: "I can effectively communicate ideas and collaborate with team members to achieve common goals." },
+          { title: "Problem Solving", description: "I approach challenges with a systematic and creative mindset, finding innovative solutions." },
+        ],
+      },
+      {
+        label: "Why choose me",
+        items: [
+          { title: "Reliable Team Player with an Eye for Quality", description: "I take responsibility for my work and place great importance on quality and clear communication. I collaborate purposefully with developers and stakeholders to deliver strong products." },
+          { title: "Meticulous and Structured Designer", description: "I work in an organized manner and pay close attention to detail. Through a structured approach, I ensure consistent designs and smooth collaboration within the team." },
+          { title: "User-Centered Problem Solver", description: "I analyze user needs and translate insights into practical and well-thought-out solutions. I strive to create clear, user-friendly, and consistent experiences." },
+        ],
+      },
+      {
+        label: "What I'm looking for within UX",
+        items: [
+          { title: "Understanding people", description: "What attracts me most to UX is understanding how people interact with products and where things go wrong. I naturally analyze interfaces whether it's a website, an app, or even a game. When something feels off, I immediately start questioning why." },
+          { title: "Solving problems", description: "I'm especially driven by fixing frustrating experiences: unclear flows, unnecessary steps, and inconsistencies that break the user's trust. My goal is to grow into a UX-focused product designer who builds solutions based on research and real user insights not assumptions." },
+          { title: "Growing as a designer", description: "As I'm starting my career, I'm actively focused on building experience through projects and continuously improving my portfolio. I see this phase as an opportunity to refine how I think, work, and solve problems as a designer." },
+        ],
+      },
+    ]}
+  />
 
   <CardSection title="My personal life">
-    <Card title="My hobbies" description="You'll usually find me in the mountains, going on hikes or just enjoying the calm that comes with it. It's something that helps me reset and think more clearly." image="/mountain.jpeg" topcolor="#191F31" bottomcolor="#0F1013" fullimage={true} />
-    <Card title="My Evenings" description="I also enjoy spending time with friends whether that's gaming in the evening or going out." image="/Cafe.jpeg" topcolor="#191F31" bottomcolor="#0F1013" fullimage={true} />
-    <Card title="My interests" description="Recently, I've been getting more interested in astronomy. I even have a telescope, and I'm exploring more about what's out there beyond our planet." image="/galaxy.jpeg" topcolor="#191F31" bottomcolor="#0F1013" fullimage={true} />
+    <Card
+      title="My hobbies"
+      description="You'll usually find me in the mountains, going on hikes or just enjoying the calm that comes with it. It's something that helps me reset and think more clearly."
+      image="/mountain.jpeg"
+      topcolor="#191F31"
+      bottomcolor="#0F1013"
+      fullimage={true}
+    />
+    <Card
+      title="My Evenings"
+      description="I also enjoy spending time with friends whether that's gaming in the evening or going out."
+      image="/Cafe.jpeg"
+      topcolor="#191F31"
+      bottomcolor="#0F1013"
+      fullimage={true}
+    />
+    <Card
+      title="My interests"
+      description="Recently, I've been getting more interested in astronomy. I even have a telescope, and I'm exploring more about what's out there beyond our planet."
+      image="/galaxy.jpeg"
+      topcolor="#191F31"
+      bottomcolor="#0F1013"
+      fullimage={true}
+    />
   </CardSection>
 </BaseLayout>
 
@@ -69,7 +124,12 @@ import Expect from "../components/Expect.astro";
   .hero__fade {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, #05070d 0%, #05070d77 60%, #05070d 100%);
+    background: linear-gradient(
+      to top,
+      #05070d 0%,
+      #05070d77 60%,
+      #05070d 100%
+    );
   }
 
   .hero__content {
@@ -96,7 +156,7 @@ import Expect from "../components/Expect.astro";
   }
 
   .hero__left h1 {
-    font-family: 'Space Mono', monospace;
+    font-family: "Space Mono", monospace;
     font-size: clamp(24px, 3vw, 44px);
     line-height: 1.15;
     letter-spacing: -1px;
@@ -105,7 +165,7 @@ import Expect from "../components/Expect.astro";
   .hero__left p {
     font-size: 15px;
     line-height: 1.75;
-    color: #EDF4FA;
+    color: #edf4fa;
   }
 
   .hero__photo {
@@ -128,24 +188,33 @@ import Expect from "../components/Expect.astro";
       padding: 0 48px 64px;
       gap: 40px;
     }
-    .hero__photo { width: 260px; }
+    .hero__photo {
+      width: 260px;
+    }
   }
 
-@media (max-width: 768px) {
-  .hero {
-    align-items: flex-end;
-    min-height: 100svh;
-  }
+  @media (max-width: 768px) {
+    .hero {
+      align-items: flex-end;
+      min-height: 100svh;
+    }
 
-  .hero__inner {
-    grid-template-columns: 1fr;
-    padding: 150px 24px 48px;
-    gap: 32px;
-    align-items: start;
-  }
+    .hero__inner {
+      grid-template-columns: 1fr;
+      padding: 150px 24px 48px;
+      gap: 32px;
+      align-items: start;
+    }
 
-  .hero__left  { order: 1; }
-  .hero__photo { order: 2; width: 100%; }
-  .hero__photo img { height: 260px; }
-}
+    .hero__left {
+      order: 1;
+    }
+    .hero__photo {
+      order: 2;
+      width: 100%;
+    }
+    .hero__photo img {
+      height: 260px;
+    }
+  }
 </style>

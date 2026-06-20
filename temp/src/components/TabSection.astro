@@ -21,49 +21,57 @@ const { title, tabs } = Astro.props;
   <h2>{title}</h2>
 
   <div class="tab-bar">
-    {tabs.map((tab, i) => (
-      <button
-        class="tab-btn"
-        class:list={{ active: i === 0 }}
-        data-tab-index={i}
-      >
-        {tab.label}
-      </button>
-    ))}
+    {
+      tabs.map((tab, i) => (
+        <button
+          class="tab-btn"
+          class:list={{ active: i === 0 }}
+          data-tab-index={i}
+        >
+          {tab.label}
+        </button>
+      ))
+    }
   </div>
 
   <div class="tab-panels">
-    {tabs.map((tab, i) => (
-      <div class="tab-panel" class:list={{ active: i === 0 }} data-tab-panel={i}>
-        <div class="tab-panel__grid">
-          {tab.items.map((item) => (
-            <div class="tab-item">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          ))}
+    {
+      tabs.map((tab, i) => (
+        <div
+          class="tab-panel"
+          class:list={{ active: i === 0 }}
+          data-tab-panel={i}
+        >
+          <div class="tab-panel__grid">
+            {tab.items.map((item) => (
+              <div class="tab-item">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </section>
 
 <script>
-  document.querySelectorAll('.tab-section').forEach((section) => {
-    const buttons = section.querySelectorAll('.tab-btn');
-    const panels = section.querySelectorAll('.tab-panel');
+  document.querySelectorAll(".tab-section").forEach((section) => {
+    const buttons = section.querySelectorAll(".tab-btn");
+    const panels = section.querySelectorAll(".tab-panel");
 
     buttons.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const index = btn.getAttribute('data-tab-index');
+      btn.addEventListener("click", () => {
+        const index = btn.getAttribute("data-tab-index");
 
-        buttons.forEach((b) => b.classList.remove('active'));
-        panels.forEach((p) => p.classList.remove('active'));
+        buttons.forEach((b) => b.classList.remove("active"));
+        panels.forEach((p) => p.classList.remove("active"));
 
-        btn.classList.add('active');
+        btn.classList.add("active");
         section
           .querySelector(`[data-tab-panel="${index}"]`)
-          ?.classList.add('active');
+          ?.classList.add("active");
       });
     });
   });
@@ -75,10 +83,11 @@ const { title, tabs } = Astro.props;
     max-width: 1400px;
     margin: 0 auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow-x: hidden;
   }
 
   .tab-section h2 {
-    font-family: 'Space Mono', monospace;
+    font-family: "Space Mono", monospace;
     font-size: 32px;
     letter-spacing: -0.5px;
     margin-bottom: 32px;
@@ -95,9 +104,9 @@ const { title, tabs } = Astro.props;
   .tab-btn {
     background: transparent;
     border: none;
-    font-family: 'Space Mono', monospace;
+    font-family: "Space Mono", monospace;
     font-size: 14px;
-    color: #8A8F98;
+    color: #8a8f98;
     padding: 14px 4px;
     margin-right: 28px;
     cursor: pointer;
@@ -106,20 +115,20 @@ const { title, tabs } = Astro.props;
   }
 
   .tab-btn::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: -1px;
     height: 2px;
-    background: #375ECC;
+    background: #375ecc;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
   }
 
   .tab-btn:hover {
-    color: #EDF4FA;
+    color: #edf4fa;
   }
 
   .tab-btn.active {
@@ -140,8 +149,14 @@ const { title, tabs } = Astro.props;
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .tab-panel__grid {
@@ -155,13 +170,13 @@ const { title, tabs } = Astro.props;
   .tab-item {
     flex: 1 1 300px;
     min-width: 0;
-    background: #13161E;
+    background: #13161e;
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 24px;
   }
 
   .tab-item h3 {
-    font-family: 'Space Mono', monospace;
+    font-family: "Space Mono", monospace;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 14px;
@@ -171,7 +186,7 @@ const { title, tabs } = Astro.props;
   .tab-item p {
     font-size: 15px;
     line-height: 1.75;
-    color: #EDF4FA;
+    color: #edf4fa;
   }
 
   @media (max-width: 1024px) {
@@ -195,6 +210,8 @@ const { title, tabs } = Astro.props;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
+      max-width: 100%;
+      width: 100%;
     }
 
     .tab-bar::-webkit-scrollbar {

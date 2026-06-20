@@ -81,9 +81,10 @@ const { title, tabs } = Astro.props;
   .tab-section {
     padding: 80px 120px;
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   .tab-section h2 {
@@ -206,12 +207,12 @@ const { title, tabs } = Astro.props;
     }
 
     .tab-bar {
-      gap: 0;
+      gap: 20px;
+      margin-bottom: 0;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      max-width: 100%;
-      width: 100%;
+      padding-bottom: 4px;
     }
 
     .tab-bar::-webkit-scrollbar {
@@ -221,7 +222,7 @@ const { title, tabs } = Astro.props;
     .tab-btn {
       font-size: 12px;
       padding: 12px 2px;
-      margin-right: 20px;
+      margin-right: 0;
       white-space: nowrap;
       flex-shrink: 0;
     }

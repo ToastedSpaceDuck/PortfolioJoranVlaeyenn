@@ -1,50 +1,88 @@
 ---
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 const { title, activePage } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <favicon href="/favicon.ico" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head><favicon href="/favicon.ico"></favicon>
   <title>{title} – Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <Nav activePage={activePage} />
-  <slot />
-  <Footer />
-</body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <body>
+    <Nav activePage={activePage} />
+    <slot />
+    <Footer />
+  </body>
+
+  <style is:global>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #05070d;
+      color: white;
+      font-family: "Manrope", sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+  </script>
+
 </html>
-
-<style is:global>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  body {
-    background: #05070D;
-    color: white;
-    font-family: 'Manrope', sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-</style>

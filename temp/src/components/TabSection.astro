@@ -17,7 +17,7 @@ interface Props {
 const { title, tabs } = Astro.props;
 ---
 
-<section class="tab-section">
+<section class="tab-section fade-in">
   <h2>{title}</h2>
 
   <div class="tab-bar">
@@ -146,7 +146,7 @@ const { title, tabs } = Astro.props;
 
   .tab-panel.active {
     display: block;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 1s ease;
   }
 
   @keyframes fadeIn {
